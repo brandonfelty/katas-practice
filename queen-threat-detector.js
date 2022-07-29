@@ -1,8 +1,5 @@
 const generateBoard = function (whiteQueen, blackQueen) {
-
   let board = [];
-  let boardJ = [];
-
   for (let i = 0; i < 8; i++) {
     let boardJ = [];
     for (let j = 0; j < 8; j++) {
@@ -17,8 +14,8 @@ const generateBoard = function (whiteQueen, blackQueen) {
   return board
 }
 
-const queenThreat = function(generatedBoard) {
-  let result = 'false'
+const queenThreat = function(whiteQueen, blackQueen) {
+  let result = false;
   if (
     (Math.abs(whiteQueen[0] - blackQueen[0]) === Math.abs(whiteQueen[1] - blackQueen[1])) ||
     (blackQueen[0] === whiteQueen[0]) ||
@@ -30,7 +27,7 @@ const queenThreat = function(generatedBoard) {
 }
 
 let whiteQueen = [0, 5];
-let blackQueen = [1, 6];
+let blackQueen = [2, 5];
 let generatedBoard = generateBoard(whiteQueen, blackQueen);
 console.log(generatedBoard);
-console.log(queenThreat(generatedBoard));
+console.log(queenThreat(whiteQueen, blackQueen));
